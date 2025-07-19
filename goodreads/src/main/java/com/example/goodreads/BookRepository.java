@@ -12,13 +12,13 @@ public interface BookRepository {
         Book getBookById(int id);
 
         // Post Method
-        void addBook(Book book);
+        Book addBook(Book book);
 
         // Put Method
-        void updateBook(int id, Book book);
+        Book updateBook(int id, Book book);
 
         // Delete Method
-        void deleteBook(int id);
+        Book deleteBook(int id);
 
 }
 
