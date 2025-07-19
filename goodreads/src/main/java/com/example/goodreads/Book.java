@@ -13,20 +13,20 @@ public class Book{
     public int getId(){
         return this.id;
     }
-    public void setId(id){
+    public void setId(int id){
         this.id=id;
     }
 
     public String getName() {
         return name;
     }
-    public void setName(name){
+    public void setName(String name){
         this.name=name;
     }
     public String getImageUrl() {
         return imageUrl;
     }
-    public void setImageUrl(imageUrl){
+    public void setImageUrl(String imageUrl){
         this.imageUrl=imageUrl;
     }
 }

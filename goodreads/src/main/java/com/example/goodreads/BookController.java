@@ -1,16 +1,16 @@
 package com.example.goodreads;
 
-import org.springframework.web.bind.annotation.RestController;
+import java.util.ArrayList;
+
 import org.springframework.web.bind.annotation.GetMapping;
-import com.example.goodreads.BookService;
-import java.util.*;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class BookController{
     BookService bookService=new BookService();
 
     @GetMapping("/book")
-    public ArrayList<Book> getBook(){
+    public ArrayList<Book> getBooks(){
         return bookService.getBooks();
     }
 
