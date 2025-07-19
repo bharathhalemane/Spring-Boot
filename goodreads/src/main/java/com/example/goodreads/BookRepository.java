@@ -6,4 +6,5 @@ import com.example.goodreads.Book;
 public interface BookRepository {        
         
         ArrayList<Book> getBooks();
+        Book getBookById(int id);
 }

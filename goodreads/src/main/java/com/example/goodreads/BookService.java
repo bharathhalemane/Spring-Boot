@@ -2,8 +2,8 @@ package com.example.goodreads;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
-import com.example.goodreads.Book;
-import com.example.goodreads.BookRepository;
+import org.springframework.web.server.ResponseStatusException;
+import org.springframework.http.HttpStatus;
 
 public class BookService implements BookRepository {
     private HashMap<Integer, Book> hmap = new HashMap<>();
@@ -17,9 +17,19 @@ public class BookService implements BookRepository {
     }
 
     @Override
-    public ArrayList<Book> getBooks(){
+    public ArrayList<Book> getBooks() {
         Collection<Book> bookCollection = hmap.values();
-        ArrayList<Book> books=new ArrayList<>(bookCollection);
+        ArrayList<Book> books = new ArrayList<>(bookCollection);
         return books;
     }
+    
+    @Override
+    public Book getBookById(int id) {
+        Book book = hmap.get(id);
+        if (book == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+        return hmap.get(id);
+    }
+    
 }

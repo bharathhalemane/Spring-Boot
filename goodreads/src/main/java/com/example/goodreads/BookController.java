@@ -2,6 +2,7 @@ package com.example.goodreads;
 
 import java.util.ArrayList;
 
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.goodreads.Book;
@@ -12,9 +13,12 @@ public class BookController{
     BookService bookService=new BookService();
 
     @GetMapping("/book")
-    public ArrayList<Book> getBooks(){
+    public ArrayList<Book> getBooks() {
         return bookService.getBooks();
     }
 
-
+    @GetMapping("/book/{id}")
+    public Book getBookById(@PathVariable("id") int id) {
+        return bookService.getBookById(id);
+    }
 }
