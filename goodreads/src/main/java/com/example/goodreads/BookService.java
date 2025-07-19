@@ -34,6 +34,6 @@ public class BookService implements BookRepository {
     
     @Override
     public void addBook(Book book){
-        
+        System.out.println("Adding book");
     }
 }

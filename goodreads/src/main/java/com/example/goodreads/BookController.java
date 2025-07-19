@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.goodreads.Book;
 import com.example.goodreads.BookService;
@@ -24,7 +25,7 @@ public class BookController{
     }
 
     @PostMapping("/book")
-    public void addBook(@RequestBody(Book book) Book book){
-
+    public void addBook(@RequestBody Book book){
+        bookService.addBook(book);
     }
 }
