@@ -32,4 +32,8 @@ public class BookService implements BookRepository {
         return hmap.get(id);
     }
     
+    @Override
+    public void addBook(Book book){
+        
+    }
 }
