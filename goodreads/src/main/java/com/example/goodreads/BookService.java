@@ -60,7 +60,7 @@ public class BookService implements BookRepository {
     }
 
     @Override
-    public Book DeleteBook(int id){
+    public Book deleteBook(int id){
         Book book = hmap.get(id);
         if(book == null){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
